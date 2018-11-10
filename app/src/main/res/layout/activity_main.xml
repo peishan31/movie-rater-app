@@ -15,10 +15,11 @@
             android:text="Name"
     />
     <EditText
-            android:id="@+id/etNumBiggerThan25"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:hint="Enter the title of movie"
+    />
 
     <TextView
             android:layout_width="wrap_content"
@@ -26,8 +27,10 @@
             android:text="Description"
     />
     <EditText
+            android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Enter a short description of the movie"
     />
 
     <TextView
@@ -68,31 +71,47 @@
             android:text="Release Date"
     />
     <EditText
+            android:id="@+id/releaseDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"
+            android:hint="Enter release date"
     />
+
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
         <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Not suitable for all audience"
-                android:id="@+id/notSuitableForAudience"/>
+                android:id="@+id/chkNotSuitableForAudience"/>
         <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Violence"
-                android:id="@+id/violence"
-                android:layout_below="@id/notSuitableForAudience"/>
+                android:id="@+id/chkViolence"
+                android:layout_below="@id/chkNotSuitableForAudience"
+                android:visibility="gone"/>
         <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Language"
-                android:id="@+id/language"
-                android:layout_toRightOf="@id/notSuitableForAudience"
-                android:layout_below="@id/notSuitableForAudience"/>
-    </RelativeLayout>
+                android:id="@+id/chkLanguage"
+                android:layout_toRightOf="@id/chkNotSuitableForAudience"
+                android:layout_below="@id/chkNotSuitableForAudience"
+                android:visibility="gone"/>
 
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADD MOVIE"
+                android:layout_centerInParent="true"
+                android:onClick="btnAddMovie"
+                />
+    </RelativeLayout>
 </LinearLayout>
