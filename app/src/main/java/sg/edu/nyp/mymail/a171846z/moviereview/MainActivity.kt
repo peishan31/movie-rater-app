@@ -30,40 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     fun btnAddMovie(v: View){
         if ((editTextEmptyValidator(tbName)==false) && (editTextEmptyValidator(tbDescription)==false) && (editTextEmptyValidator(tbReleaseDate)==false)){
-            // Get selected text from radio button
-            val radioLanguageGroup = findViewById<View>(R.id.radioLanguage) as RadioGroup
-            val selectedId = radioLanguageGroup.checkedRadioButtonId // int selectedId
-            val radioLanguageBtn = findViewById(selectedId) as RadioButton // find the radiobutton by returned id
-            // //Get selected text from radio button
-            val suitableForAllAges = (chkNotSuitableForAudience.isChecked == false)
-
-            // Get selected text from chkbox
-            var txt = ""
-            if (suitableForAllAges == false) {
-                val itms = ArrayList<CheckBox>()
-                itms.add(chkViolence)
-                itms.add(chkLanguage)
-                for (item in itms) {
-                    if (item.isChecked)
-                        txt += "\n" + item.text.toString()
-                }
-                Toast.makeText(this, "Title = ${tbName.text.toString()}\n" +
-                        "Overview = ${tbDescription.text.toString()}\n" +
-                        "Release date = ${tbReleaseDate.text.toString()}\n" +
-                        "Language = ${radioLanguageBtn.text}\n" +
-                        "Suitable for all ages = ${suitableForAllAges}\n" +
-                        "Reason: ${txt}"
-                    , Toast.LENGTH_LONG).show()
-            }
-            // //Get selected text from chkbox end
-            else { // Remove "reason:" if suitable for all ages == false
-                Toast.makeText(this, "Title = ${tbName.text.toString()}\n" +
-                        "Overview = ${tbDescription.text.toString()}\n" +
-                        "Release date = ${tbReleaseDate.text.toString()}\n" +
-                        "Language = ${radioLanguageBtn.text}\n" +
-                        "Suitable for all ages = ${suitableForAllAges}"
-                    , Toast.LENGTH_LONG).show()
-            }
+            toastMsg()
         } else{
             editTextEmptyValidator(tbName)
             editTextEmptyValidator(tbDescription)
@@ -81,4 +48,31 @@ class MainActivity : AppCompatActivity() {
         return isEmpty
     }
 
+    fun toastMsg(){
+        // Get selected text from radio button
+        val radioLanguageGroup = findViewById<View>(R.id.radioLanguage) as RadioGroup
+        val selectedId = radioLanguageGroup.checkedRadioButtonId // int selectedId
+        val radioLanguageBtn = findViewById(selectedId) as RadioButton // find the radiobutton by returned id
+        // //Get selected text from radio button
+        val suitableForAllAges = (chkNotSuitableForAudience.isChecked == false)
+        var txt = ""
+        // Get selected text from chkbox
+        if (suitableForAllAges == false) {
+            txt = "Reason: "
+            val itms = ArrayList<CheckBox>()
+            itms.add(chkViolence)
+            itms.add(chkLanguage)
+            for (item in itms) {
+                if (item.isChecked)
+                    txt += "\n" + item.text.toString()
+            }
+        }
+        Toast.makeText(this, "Title = ${tbName.text.toString()}\n" +
+                "Overview = ${tbDescription.text.toString()}\n" +
+                "Release date = ${tbReleaseDate.text.toString()}\n" +
+                "Language = ${radioLanguageBtn.text}\n" +
+                "Suitable for all ages = ${suitableForAllAges}\n" +
+                "${txt}"
+            , Toast.LENGTH_LONG).show()
+    }
 }
