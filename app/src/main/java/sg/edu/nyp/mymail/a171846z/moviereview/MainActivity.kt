@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         var txt = ""
         // Get selected text from chkbox
         if (suitableForAllAges == false) {
-            txt = "Reason: "
+            txt = "\nReason: "
             val itms = ArrayList<CheckBox>()
             itms.add(chkViolence)
             itms.add(chkLanguage)
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
                 "Overview = ${tbDescription.text.toString()}\n" +
                 "Release date = ${tbReleaseDate.text.toString()}\n" +
                 "Language = ${radioLanguageBtn.text}\n" +
-                "Suitable for all ages = ${suitableForAllAges}\n" +
+                "Suitable for all ages = ${suitableForAllAges}" +
                 "${txt}"
             , Toast.LENGTH_LONG).show()
     }
