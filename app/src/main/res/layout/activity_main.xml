@@ -12,31 +12,31 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="@string/activityMain_tvName"
     />
     <EditText
             android:id="@+id/tbName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter the title of movie"
+            android:hint="@string/activityMain_etName"
     />
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description"
+            android:text="@string/activityMain_tvDescription"
     />
     <EditText
             android:id="@+id/tbDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter a short description of the movie"
+            android:hint="@string/activityMain_etDescription"
     />
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Language"
+            android:text="@string/viewMovie_activityMain_tvLanguage"
     />
     <RadioGroup
             android:id="@+id/radioLanguage"
@@ -47,22 +47,22 @@
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="English"
+                android:text="@string/activityMain_rbEnglish"
         />
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Chinese"
+                android:text="@string/activityMain_rbChinese"
         />
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Malay"
+                android:text="@string/activityMain_rbMalay"
         />
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tamil"
+                android:text="@string/activityMain_rbTamil"
         />
     </RadioGroup>
 
@@ -70,14 +70,14 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Release Date"
+            android:text="@string/viewMovie_activityMain_tvReleaseDate"
     />
     <EditText
             android:id="@+id/tbReleaseDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"
-            android:hint="Enter release date"
+            android:hint="@string/activityMain_etReleaseDate"
     />
 
     <RelativeLayout
@@ -86,19 +86,19 @@
         <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Not suitable for all audience"
+                android:text="@string/activityMain_chkNotSuitableForAudience"
                 android:id="@+id/chkNotSuitableForAudience"/>
         <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Violence"
+                android:text="@string/activityMain_chkViolence"
                 android:id="@+id/chkViolence"
                 android:layout_below="@id/chkNotSuitableForAudience"
                 android:visibility="gone"/>
         <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Language"
+                android:text="@string/activityMain_chkLanguage"
                 android:id="@+id/chkLanguage"
                 android:layout_toRightOf="@id/chkNotSuitableForAudience"
                 android:layout_below="@id/chkNotSuitableForAudience"
@@ -111,7 +111,7 @@
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ADD MOVIE"
+                android:text="@string/activityMain_btnAddMovie"
                 android:layout_centerInParent="true"
                 android:onClick="btnAddMovie"
                 />
