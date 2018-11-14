@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">MovieRater</string>
+    <!--View movie details-->
+    <string name="viewMovie_tvTitle">Title:</string>
+    <string name="viewMovie_tvOverview">Overview:</string>
+    <string name="viewMovie_activityMain_tvSuitableForChildrenBelow13">Suitable for children below 13:</string>
+    <string name="viewMovie_tvLanguage">Language:</string>
+    <string name="viewMovie_tvReleaseDate">Release date:</string>
+    <!--//View movie details-->
+    <!--Activity Main-->
+    <string name="activityMain_tvName">Name</string>
+    <string name="activityMain_tvDescription">Description</string>
+
+    <string name="activityMain_etName">Enter the title of movie</string>
+    <string name="activityMain_etDescription">Enter a short description of the movie</string>
+    <string name="activityMain_etReleaseDate">Enter release date</string>
+
+    <string name="activityMain_rbEnglish">English</string>
+    <string name="activityMain_rbChinese">Chinese</string>
+    <string name="activityMain_rbMalay">Malay</string>
+    <string name="activityMain_rbTamil">Tamil</string>
+
+    <string name="activityMain_chkNotSuitableForAudience">Not suitable for all audience</string>
+    <string name="activityMain_chkViolence">Violence</string>
+    <string name="activityMain_chkLanguage">Language</string>
+
+    <string name="activityMain_btnAddMovie">ADD MOVIE</string>
+    <!--//Activity Main-->
+    <!--Rate Movie-->
+    <string name="rateMovie_tvEnter">Enter your review for the movie : </string>
+    <string name="rateMovie_etView">Share your view on the show</string>
+    <!--//Rate Movie-->
+    <string name="viewMovie_activityMain_tvLanguage">Language</string>
+    <string name="viewMovie_activityMain_tvReleaseDate">Release date</string>
+
+
+
 </resources>
