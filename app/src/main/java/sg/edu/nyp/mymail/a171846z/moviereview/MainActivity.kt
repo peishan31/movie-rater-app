@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import android.text.TextUtils
+import android.view.Gravity
 import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.Toast
@@ -67,12 +68,13 @@ class MainActivity : AppCompatActivity() {
                     txt += "\n" + item.text.toString()
             }
         }
-        Toast.makeText(this, "Title = ${tbName.text.toString()}\n" +
-                "Overview = ${tbDescription.text.toString()}\n" +
-                "Release date = ${tbReleaseDate.text.toString()}\n" +
-                "Language = ${radioLanguageBtn.text}\n" +
-                "Suitable for all ages = ${suitableForAllAges}" +
-                "${txt}"
-            , Toast.LENGTH_LONG).show()
+        var toast = Toast.makeText(this, "Title = ${tbName.text.toString()}\n" +
+                    "Overview = ${tbDescription.text.toString()}\n" +
+                    "Release date = ${tbReleaseDate.text.toString()}\n" +
+                    "Language = ${radioLanguageBtn.text}\n" +
+                    "Suitable for all ages = ${suitableForAllAges}" +
+                    "${txt}"
+            , Toast.LENGTH_LONG)
+        toast.show()
     }
 }
