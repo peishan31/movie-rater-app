@@ -6,79 +6,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".MainActivity"
-        >
+        tools:context=".MainActivity">
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/activityMain_tvName"
-    />
+            android:text="@string/activityMain_tvName"/>
     <EditText
             android:id="@+id/tbName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/activityMain_etName"
-    />
+            android:hint="@string/activityMain_etName"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/activityMain_tvDescription"
-    />
+            android:text="@string/activityMain_tvDescription"/>
     <EditText
             android:id="@+id/tbDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/activityMain_etDescription"
-    />
+            android:hint="@string/activityMain_etDescription"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/viewMovie_activityMain_tvLanguage"
-    />
+            android:text="@string/viewMovie_activityMain_tvLanguage"/>
     <RadioGroup
             android:id="@+id/radioLanguage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/activityMain_rbEnglish"
-        />
+                android:text="@string/activityMain_rbEnglish"/>
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/activityMain_rbChinese"
-        />
+                android:text="@string/activityMain_rbChinese"/>
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/activityMain_rbMalay"
-        />
+                android:text="@string/activityMain_rbMalay"/>
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/activityMain_rbTamil"
-        />
+                android:text="@string/activityMain_rbTamil"/>
     </RadioGroup>
-
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/viewMovie_activityMain_tvReleaseDate"
-    />
+            android:text="@string/viewMovie_activityMain_tvReleaseDate"/>
     <EditText
             android:id="@+id/tbReleaseDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"
-            android:hint="@string/activityMain_etReleaseDate"
-    />
+            android:hint="@string/activityMain_etReleaseDate"/>
 
     <RelativeLayout
             android:layout_width="match_parent"
@@ -113,7 +99,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/activityMain_btnAddMovie"
                 android:layout_centerInParent="true"
-                android:onClick="btnAddMovie"
-                />
+                android:onClick="btnAddMovie"/>
     </RelativeLayout>
 </LinearLayout>

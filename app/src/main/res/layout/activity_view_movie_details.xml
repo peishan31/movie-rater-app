@@ -43,8 +43,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/viewMovie_tvTitle"
-        />
+                android:text="@string/viewMovie_tvTitle"/>
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -55,8 +54,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvTitle"
                 android:textSize="18dp"
-                android:text = ""
-        />
+                android:text = ""/>
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -65,8 +63,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/viewMovie_tvOverview"
-        />
+                android:text="@string/viewMovie_tvOverview"/>
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -77,8 +74,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvOverview"
                 android:textSize="18dp"
-                android:text=""
-        />
+                android:text=""/>
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -87,8 +83,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/viewMovie_tvLanguage"
-        />
+                android:text="@string/viewMovie_tvLanguage"/>
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -99,8 +94,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvLanguage"
                 android:textSize="18dp"
-                android:text=""
-        />
+                android:text=""/>
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -109,8 +103,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/viewMovie_tvReleaseDate"
-        />
+                android:text="@string/viewMovie_tvReleaseDate"/>
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -121,8 +114,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvReleaseDate"
                 android:textSize="18dp"
-                android:text=""
-        />
+                android:text=""/>
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -131,8 +123,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/viewMovie_activityMain_tvSuitableForChildrenBelow13"
-        />
+                android:text="@string/viewMovie_activityMain_tvSuitableForChildrenBelow13"/>
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
@@ -143,8 +134,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvSuitableForChildrenBelow13"
                 android:textSize="18dp"
-                android:text=""
-        />
+                android:text=""/>
     </LinearLayout>
     <!--//Center-->
     <!--Bottom-->

@@ -32,7 +32,4 @@
     <!--//Rate Movie-->
     <string name="viewMovie_activityMain_tvLanguage">Language</string>
     <string name="viewMovie_activityMain_tvReleaseDate">Release date</string>
-
-
-
 </resources>
