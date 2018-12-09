@@ -1,4 +1,4 @@
-package sg.edu.nyp.mymail.a171846z.moviereview
+package sg.edu.nyp.a171846z.myapplication
 
 import org.junit.Test
 

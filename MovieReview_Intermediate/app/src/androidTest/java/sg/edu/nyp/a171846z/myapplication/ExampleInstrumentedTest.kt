@@ -1,4 +1,4 @@
-package sg.edu.nyp.mymail.a171846z.moviereview
+package sg.edu.nyp.a171846z.myapplication
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("sg.edu.nyp.mymail.a171846z.moviereview", appContext.packageName)
+        assertEquals("sg.edu.nyp.a171846z.myapplication", appContext.packageName)
     }
 }
