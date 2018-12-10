@@ -19,12 +19,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/tvEnter"
-                android:id="@+id/tvTitle"
+                android:id="@+id/rateMovie_tvTitle"
                 android:text=""/>
     </RelativeLayout>
 
     <RatingBar
-            android:id="@+id/rating_rating_bar"
+            android:id="@+id/rateMovie_rating_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:id="@+id/etRatingView"
+            android:id="@+id/rateMovie_etRatingView"
             android:inputType="textMultiLine"
             android:lines="4"
             android:gravity="top"/>

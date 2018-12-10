@@ -27,15 +27,15 @@ class ViewMovieDetails : AppCompatActivity() {
         venom.mvReleaseDate = intent.getStringExtra("releaseDate")
         venom.mvSuitableForChild = intent.getStringExtra("suitability")
         //venom.mvReason = intent.getStringExtra("reason")
-        tvTitle.text = venom.mvTitle.toString()
-        tvLanguage.text = venom.mvLanguage.toString()
-        tvOverview.text = venom.mvOverview.toString()
-        tvReleaseDate.text = venom.mvReleaseDate.toString()
-        tvSuitableForChildrenBelow13.text = venom.mvSuitableForChild.toString()
+        viewMovie_tvTitle.text = venom.mvTitle.toString()
+        viewMovie_tvLanguage.text = venom.mvLanguage.toString()
+        viewMovie_tvOverview.text = venom.mvOverview.toString()
+        viewMovie_tvReleaseDate.text = venom.mvReleaseDate.toString()
+        viewMovie_tvSuitableForChildrenBelow13.text = venom.mvSuitableForChild.toString()
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        registerForContextMenu(tvNoReviews)
+        registerForContextMenu(viewMovie_tvNoReviews)
     }
 
     class MovieEntity() {
@@ -58,7 +58,7 @@ class ViewMovieDetails : AppCompatActivity() {
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
         super.onCreateContextMenu(menu, v, menuInfo)
 
-        if (v?.id == R.id.tvNoReviews){
+        if (v?.id == R.id.viewMovie_tvNoReviews){
             menu?.add(1,1001,1,"Add Review")
         }
     }
@@ -69,7 +69,7 @@ class ViewMovieDetails : AppCompatActivity() {
             // next page
             var myIntent = Intent(this, RateMovie::class.java)
 
-            myIntent.putExtra("name",tvTitle.text.toString());
+            myIntent.putExtra("name",viewMovie_tvTitle.text.toString());
 
             startActivityForResult(myIntent,1)
         }
@@ -85,12 +85,12 @@ class ViewMovieDetails : AppCompatActivity() {
                 var review = data?.getStringExtra(RateMovie.REVIEW)
                 var numRating = data?.getStringExtra(RateMovie.NUMRATING)
 
-                tvNoReviews.visibility = View.GONE
-                rating_rating_bar.visibility = View.VISIBLE
-                rating_rating_bar.rating = numRating!!.toFloat()
+                viewMovie_tvNoReviews.visibility = View.GONE
+                viewMovie_rating_bar.visibility = View.VISIBLE
+                viewMovie_rating_bar.rating = numRating!!.toFloat()
                 // Toast.makeText(this,"${review}",Toast.LENGTH_LONG).toString()
-                tvReview.visibility = View.VISIBLE
-                tvReview.text = review
+                viewMovie_tvReview.visibility = View.VISIBLE
+                viewMovie_tvReview.text = review
             }
         }
     }

@@ -16,13 +16,13 @@ class EditMovie : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        chkNotSuitableForAudience.setOnClickListener({
-            if (chkNotSuitableForAudience.isChecked == true){
-                chkLanguage.visibility = View.VISIBLE
-                chkViolence.visibility = View.VISIBLE
+        main_chkNotSuitableForAudience.setOnClickListener({
+            if (main_chkNotSuitableForAudience.isChecked == true){
+                main_chkLanguage.visibility = View.VISIBLE
+                main_chkViolence.visibility = View.VISIBLE
             } else {
-                chkLanguage.visibility = View.INVISIBLE
-                chkViolence.visibility = View.INVISIBLE
+                main_chkLanguage.visibility = View.INVISIBLE
+                main_chkViolence.visibility = View.INVISIBLE
             }
         })
     }
@@ -33,12 +33,12 @@ class EditMovie : AppCompatActivity() {
     }
 
     fun btnAddMovie(v: View){
-        if ((editTextEmptyValidator(tbName)==false) && (editTextEmptyValidator(tbDescription)==false) && (editTextEmptyValidator(tbReleaseDate)==false)){
+        if ((editTextEmptyValidator(main_tbName)==false) && (editTextEmptyValidator(main_tbDescription)==false) && (editTextEmptyValidator(main_tbReleaseDate)==false)){
             toastMsg()
         } else{
-            editTextEmptyValidator(tbName)
-            editTextEmptyValidator(tbDescription)
-            editTextEmptyValidator(tbReleaseDate)
+            editTextEmptyValidator(main_tbName)
+            editTextEmptyValidator(main_tbDescription)
+            editTextEmptyValidator(main_tbReleaseDate)
         }
     }
 
@@ -58,22 +58,22 @@ class EditMovie : AppCompatActivity() {
         val selectedId = radioLanguageGroup.checkedRadioButtonId // int selectedId
         val radioLanguageBtn = findViewById(selectedId) as RadioButton // find the radiobutton by returned id
         // //Get selected text from radio button
-        val suitableForAllAges = (chkNotSuitableForAudience.isChecked == false)
+        val suitableForAllAges = (main_chkNotSuitableForAudience.isChecked == false)
         var txt = ""
         // Get selected text from chkbox
         if (suitableForAllAges == false) {
             txt = "\nReason: "
             val itms = ArrayList<CheckBox>()
-            itms.add(chkViolence)
-            itms.add(chkLanguage)
+            itms.add(main_chkViolence)
+            itms.add(main_chkLanguage)
             for (item in itms) {
                 if (item.isChecked)
                     txt += "\n" + item.text.toString()
             }
         }
-        var toast = Toast.makeText(this, "Title = ${tbName.text.toString()}\n" +
-                "Overview = ${tbDescription.text.toString()}\n" +
-                "Release date = ${tbReleaseDate.text.toString()}\n" +
+        var toast = Toast.makeText(this, "Title = ${main_tbName.text.toString()}\n" +
+                "Overview = ${main_tbDescription.text.toString()}\n" +
+                "Release date = ${main_tbReleaseDate.text.toString()}\n" +
                 "Language = ${radioLanguageBtn.text}\n" +
                 "Suitable for all ages = ${suitableForAllAges}" +
                 "${txt}"

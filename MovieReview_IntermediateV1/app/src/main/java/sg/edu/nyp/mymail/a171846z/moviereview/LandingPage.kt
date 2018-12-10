@@ -14,13 +14,13 @@ class LandingPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing_page)
 
-        registerForContextMenu(tvAddMovie)
+        registerForContextMenu(landing_tvAddMovie)
     }
 
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
         super.onCreateContextMenu(menu, v, menuInfo)
 
-        if (v?.id == R.id.tvAddMovie) {
+        if (v?.id == R.id.landing_tvAddMovie) {
             menu?.add(1,1001,1, "Add")
         }
     }

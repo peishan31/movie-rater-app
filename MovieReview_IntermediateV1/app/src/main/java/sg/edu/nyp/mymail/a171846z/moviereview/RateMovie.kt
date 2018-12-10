@@ -22,7 +22,7 @@ class RateMovie : AppCompatActivity() {
         setContentView(R.layout.activity_rate_movie)
 
         var title = intent.getStringExtra("name")
-        tvTitle.text = title.toString()
+        rateMovie_tvTitle.text = title.toString()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -41,8 +41,8 @@ class RateMovie : AppCompatActivity() {
         if(item?.itemId == R.id.miSubmit){
             var output = Intent()
 
-            var review = etRatingView.text.toString()
-            var numRating = rating_rating_bar.rating.toString()
+            var review = rateMovie_etRatingView.text.toString()
+            var numRating = rateMovie_rating_bar.rating.toString()
 
             Toast.makeText(this,"review: ${review} numRating: ${numRating}",Toast.LENGTH_LONG).show()
             output.putExtra(REVIEW, review)

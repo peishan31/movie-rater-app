@@ -25,13 +25,13 @@ class MainActivity : AppCompatActivity() {
         //supportActionBar!!.title = "Go Back"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        chkNotSuitableForAudience.setOnClickListener({
-            if (chkNotSuitableForAudience.isChecked == true){
-                chkLanguage.visibility = View.VISIBLE
-                chkViolence.visibility = View.VISIBLE
+        main_chkNotSuitableForAudience.setOnClickListener({
+            if (main_chkNotSuitableForAudience.isChecked == true){
+                main_chkLanguage.visibility = View.VISIBLE
+                main_chkViolence.visibility = View.VISIBLE
             } else {
-                chkLanguage.visibility = View.INVISIBLE
-                chkViolence.visibility = View.INVISIBLE
+                main_chkLanguage.visibility = View.INVISIBLE
+                main_chkViolence.visibility = View.INVISIBLE
             }
         })
     }
@@ -43,14 +43,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item?.itemId == R.id.miAddMovie){
-            if ((editTextEmptyValidator(tbName)==false) && (editTextEmptyValidator(tbDescription)==false) && (editTextEmptyValidator(tbReleaseDate)==false)){
+            if ((editTextEmptyValidator(main_tbName)==false) && (editTextEmptyValidator(main_tbDescription)==false) && (editTextEmptyValidator(main_tbReleaseDate)==false)){
                 // toast msg stuffs
                 // Get selected text from radio button
                 val radioLanguageGroup = findViewById<View>(R.id.radioLanguage) as RadioGroup
                 val selectedId = radioLanguageGroup.checkedRadioButtonId // int selectedId
                 val radioLanguageBtn = findViewById(selectedId) as RadioButton // find the radiobutton by returned id
                 // //Get selected text from radio button
-                val suitableForAllAges = (chkNotSuitableForAudience.isChecked == false)
+                val suitableForAllAges = (main_chkNotSuitableForAudience.isChecked == false)
                 var txt = ""
                 var suitabilityTxt = ""
                 var suitability = "Yes"
@@ -59,23 +59,23 @@ class MainActivity : AppCompatActivity() {
                     suitability = "No"
                     txt = "\nReason: "
                     val itms = ArrayList<CheckBox>()
-                    itms.add(chkViolence)
-                    itms.add(chkLanguage)
+                    itms.add(main_chkViolence)
+                    itms.add(main_chkLanguage)
                     for (item in itms) {
                         if (item.isChecked)
                             txt += "\n" + item.text.toString()
                     }
 
-                    if (chkViolence.isChecked == true){
+                    if (main_chkViolence.isChecked == true){
                         suitabilityTxt += "(Violence)"
                     }
-                    if (chkLanguage.isChecked == true) {
+                    if (main_chkLanguage.isChecked == true) {
                         suitabilityTxt += "(Language)"
                     }
                 }
-                var toast = Toast.makeText(this, "Title = ${tbName.text.toString()}\n" +
-                        "Overview = ${tbDescription.text.toString()}\n" +
-                        "Release date = ${tbReleaseDate.text.toString()}\n" +
+                var toast = Toast.makeText(this, "Title = ${main_tbName.text.toString()}\n" +
+                        "Overview = ${main_tbDescription.text.toString()}\n" +
+                        "Release date = ${main_tbReleaseDate.text.toString()}\n" +
                         "Language = ${radioLanguageBtn.text}\n" +
                         "Suitable for all ages = ${suitableForAllAges}" +
                         "${txt}"
@@ -84,32 +84,32 @@ class MainActivity : AppCompatActivity() {
                 // -- toast msg stuffs
                 var reason = "${suitability}${suitabilityTxt}"
                 var myIntent = Intent(this, ViewMovieDetails::class.java)
-                myIntent.putExtra("title",tbName.text.toString())
-                myIntent.putExtra("overview",tbDescription.text.toString())
-                myIntent.putExtra("releaseDate",tbReleaseDate.text.toString())
+                myIntent.putExtra("title",main_tbName.text.toString())
+                myIntent.putExtra("overview",main_tbDescription.text.toString())
+                myIntent.putExtra("releaseDate",main_tbReleaseDate.text.toString())
                 myIntent.putExtra("language",radioLanguageBtn.text)
                 myIntent.putExtra("suitability",reason)
 
 
                 startActivity(myIntent)
             } else{
-                editTextEmptyValidator(tbName)
-                editTextEmptyValidator(tbDescription)
-                editTextEmptyValidator(tbReleaseDate)
+                editTextEmptyValidator(main_tbName)
+                editTextEmptyValidator(main_tbDescription)
+                editTextEmptyValidator(main_tbReleaseDate)
             }
         } else if(item?.itemId == R.id.miClearEntries){
-            tbName.text.clear()
-            tbDescription.text.clear()
-            rbEnglish.isChecked = true
-            rbChinese.isChecked = false
-            rbMalay.isChecked = false
-            rbTamil.isChecked = false
-            tbReleaseDate.text.clear()
-            chkNotSuitableForAudience.isChecked = false
-            chkViolence.isChecked = false
-            chkLanguage.isChecked = false
-            chkLanguage.visibility = View.INVISIBLE
-            chkViolence.visibility = View.INVISIBLE
+            main_tbName.text.clear()
+            main_tbDescription.text.clear()
+            main_rbEnglish.isChecked = true
+            main_rbChinese.isChecked = false
+            main_rbMalay.isChecked = false
+            main_rbTamil.isChecked = false
+            main_tbReleaseDate.text.clear()
+            main_chkNotSuitableForAudience.isChecked = false
+            main_chkViolence.isChecked = false
+            main_chkLanguage.isChecked = false
+            main_chkLanguage.visibility = View.INVISIBLE
+            main_chkViolence.visibility = View.INVISIBLE
         }
 
         return super.onOptionsItemSelected(item)
