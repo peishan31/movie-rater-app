@@ -71,7 +71,7 @@ class ViewMovieDetails : AppCompatActivity() {
 
             myIntent.putExtra("name",tvTitle.text.toString());
 
-            startActivity(myIntent)
+            startActivityForResult(myIntent,1)
         }
         return super.onContextItemSelected(item)
     }
