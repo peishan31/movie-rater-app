@@ -19,7 +19,7 @@ class ViewMovieDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_movie_details)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         var venom = MovieEntity(intent.getStringExtra("title"), intent.getStringExtra("language"),
             intent.getStringExtra("overview"),intent.getStringExtra("releaseDate"),intent.getStringExtra("suitability"))
@@ -41,10 +41,10 @@ class ViewMovieDetails : AppCompatActivity() {
         registerForContextMenu(viewMovie_tvNoReviews)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
+    /*override fun onSupportNavigateUp(): Boolean {
         finish()
         return super.onSupportNavigateUp()
-    }
+    }*/
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
         super.onCreateContextMenu(menu, v, menuInfo)
 

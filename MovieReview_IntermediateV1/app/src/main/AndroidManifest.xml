@@ -12,7 +12,7 @@
         <activity android:name=".MainActivity" android:parentActivityName=".LandingPage">
 
         </activity>
-        <activity android:name=".ViewMovieDetails">
+        <activity android:name=".ViewMovieDetails" android:parentActivityName=".LandingPage">
 
         </activity>
         <activity android:name=".RateMovie">
