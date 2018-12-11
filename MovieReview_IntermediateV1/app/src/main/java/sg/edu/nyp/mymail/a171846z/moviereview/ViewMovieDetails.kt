@@ -19,13 +19,16 @@ class ViewMovieDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_movie_details)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        var venom = MovieEntity();
-        venom.mvTitle = intent.getStringExtra("title")
+        var venom = MovieEntity(intent.getStringExtra("title"), intent.getStringExtra("language"),
+            intent.getStringExtra("overview"),intent.getStringExtra("releaseDate"),intent.getStringExtra("suitability"))
+        //var venom = MovieEntity();
+        /*venom.mvTitle = intent.getStringExtra("title")
         venom.mvLanguage =  intent.getStringExtra("language")
         venom.mvOverview = intent.getStringExtra("overview")
         venom.mvReleaseDate = intent.getStringExtra("releaseDate")
-        venom.mvSuitableForChild = intent.getStringExtra("suitability")
+        venom.mvSuitableForChild = intent.getStringExtra("suitability")*/
         //venom.mvReason = intent.getStringExtra("reason")
         viewMovie_tvTitle.text = venom.mvTitle.toString()
         viewMovie_tvLanguage.text = venom.mvLanguage.toString()
@@ -33,28 +36,15 @@ class ViewMovieDetails : AppCompatActivity() {
         viewMovie_tvReleaseDate.text = venom.mvReleaseDate.toString()
         viewMovie_tvSuitableForChildrenBelow13.text = venom.mvSuitableForChild.toString()
 
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        //supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         registerForContextMenu(viewMovie_tvNoReviews)
     }
 
-    class MovieEntity() {
-        var mvTitle: String = ""
-        var mvOverview: String = ""
-        var mvLanguage: String = ""
-        var mvReleaseDate: String = ""
-        var mvSuitableForChild: String = ""
-        //var mvReason: String = ""
-        init {
-            this.mvTitle
-            this.mvOverview
-            this.mvLanguage
-            this.mvReleaseDate
-            this.mvSuitableForChild
-            //this.mvReason
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
-
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
         super.onCreateContextMenu(menu, v, menuInfo)
 

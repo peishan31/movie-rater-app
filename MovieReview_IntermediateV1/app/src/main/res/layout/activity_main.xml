@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:text="@string/activityMain_tvName"/>
     <EditText
-            android:id="@+id/main_tbName"
+            android:id="@+id/main_etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/activityMain_etName"/>
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="@string/activityMain_tvDescription"/>
     <EditText
-            android:id="@+id/main_tbDescription"
+            android:id="@+id/main_etDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/activityMain_etDescription"/>
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:text="@string/viewMovie_activityMain_tvReleaseDate"/>
     <EditText
-            android:id="@+id/main_tbReleaseDate"
+            android:id="@+id/main_etReleaseDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"

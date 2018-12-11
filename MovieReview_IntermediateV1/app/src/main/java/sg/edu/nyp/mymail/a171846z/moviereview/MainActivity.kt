@@ -22,8 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //supportActionBar!!.title = "Go Back"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        main_rbEnglish.isChecked = true
 
         main_chkNotSuitableForAudience.setOnClickListener({
             if (main_chkNotSuitableForAudience.isChecked == true){
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item?.itemId == R.id.miAddMovie){
-            if ((editTextEmptyValidator(main_tbName)==false) && (editTextEmptyValidator(main_tbDescription)==false) && (editTextEmptyValidator(main_tbReleaseDate)==false)){
+            if ((editTextEmptyValidator(main_etName)==false) && (editTextEmptyValidator(main_etDescription)==false) && (editTextEmptyValidator(main_etReleaseDate)==false)){
                 // toast msg stuffs
                 // Get selected text from radio button
                 val radioLanguageGroup = findViewById<View>(R.id.radioLanguage) as RadioGroup
@@ -67,15 +66,18 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     if (main_chkViolence.isChecked == true){
-                        suitabilityTxt += "(Violence)"
+                        suitabilityTxt = "(Violence)"
                     }
                     if (main_chkLanguage.isChecked == true) {
-                        suitabilityTxt += "(Language)"
+                        suitabilityTxt = "(Language)"
+                    }
+                    if (main_chkLanguage.isChecked == true && main_chkViolence.isChecked == true) {
+                        suitabilityTxt = "(Violence & Language)"
                     }
                 }
-                var toast = Toast.makeText(this, "Title = ${main_tbName.text.toString()}\n" +
-                        "Overview = ${main_tbDescription.text.toString()}\n" +
-                        "Release date = ${main_tbReleaseDate.text.toString()}\n" +
+                var toast = Toast.makeText(this, "Title = ${main_etName.text.toString()}\n" +
+                        "Overview = ${main_etDescription.text.toString()}\n" +
+                        "Release date = ${main_etReleaseDate.text.toString()}\n" +
                         "Language = ${radioLanguageBtn.text}\n" +
                         "Suitable for all ages = ${suitableForAllAges}" +
                         "${txt}"
@@ -84,27 +86,27 @@ class MainActivity : AppCompatActivity() {
                 // -- toast msg stuffs
                 var reason = "${suitability}${suitabilityTxt}"
                 var myIntent = Intent(this, ViewMovieDetails::class.java)
-                myIntent.putExtra("title",main_tbName.text.toString())
-                myIntent.putExtra("overview",main_tbDescription.text.toString())
-                myIntent.putExtra("releaseDate",main_tbReleaseDate.text.toString())
+                myIntent.putExtra("title",main_etName.text.toString())
+                myIntent.putExtra("overview",main_etDescription.text.toString())
+                myIntent.putExtra("releaseDate",main_etReleaseDate.text.toString())
                 myIntent.putExtra("language",radioLanguageBtn.text)
                 myIntent.putExtra("suitability",reason)
 
 
                 startActivity(myIntent)
             } else{
-                editTextEmptyValidator(main_tbName)
-                editTextEmptyValidator(main_tbDescription)
-                editTextEmptyValidator(main_tbReleaseDate)
+                editTextEmptyValidator(main_etName)
+                editTextEmptyValidator(main_etDescription)
+                editTextEmptyValidator(main_etReleaseDate)
             }
         } else if(item?.itemId == R.id.miClearEntries){
-            main_tbName.text.clear()
-            main_tbDescription.text.clear()
+            main_etName.text.clear()
+            main_etDescription.text.clear()
             main_rbEnglish.isChecked = true
             main_rbChinese.isChecked = false
             main_rbMalay.isChecked = false
             main_rbTamil.isChecked = false
-            main_tbReleaseDate.text.clear()
+            main_etReleaseDate.text.clear()
             main_chkNotSuitableForAudience.isChecked = false
             main_chkViolence.isChecked = false
             main_chkLanguage.isChecked = false

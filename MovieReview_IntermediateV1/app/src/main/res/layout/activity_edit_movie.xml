@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             android:text="@string/activityMain_tvName"/>
     <EditText
-            android:id="@+id/tbName"
+            android:id="@+id/editMovie_etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/activityMain_etName"/>
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:text="@string/activityMain_tvDescription"/>
     <EditText
-            android:id="@+id/tbDescription"
+            android:id="@+id/editMovie_etDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/activityMain_etDescription"/>
@@ -32,23 +32,27 @@
             android:layout_height="wrap_content"
             android:text="@string/viewMovie_activityMain_tvLanguage"/>
     <RadioGroup
-            android:id="@+id/radioLanguage"
+            android:id="@+id/editMovie_radioLanguage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
         <RadioButton
+                android:id="@+id/editMovie_rbEnglish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/activityMain_rbEnglish"/>
         <RadioButton
+                android:id="@+id/editMovie_rbChinese"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/activityMain_rbChinese"/>
         <RadioButton
+                android:id="@+id/editMovie_rbMalay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/activityMain_rbMalay"/>
         <RadioButton
+                android:id="@+id/editMovie_rbTamil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/activityMain_rbTamil"/>
@@ -59,7 +63,7 @@
             android:layout_height="wrap_content"
             android:text="@string/viewMovie_activityMain_tvReleaseDate"/>
     <EditText
-            android:id="@+id/tbReleaseDate"
+            android:id="@+id/editMovie_etReleaseDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"
@@ -72,32 +76,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/activityMain_chkNotSuitableForAudience"
-                android:id="@+id/chkNotSuitableForAudience"/>
+                android:id="@+id/editMovie_chkNotSuitableForAudience"/>
         <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/activityMain_chkViolence"
-                android:id="@+id/chkViolence"
-                android:layout_below="@id/chkNotSuitableForAudience"
+                android:id="@+id/editMovie_chkViolence"
+                android:layout_below="@id/editMovie_chkNotSuitableForAudience"
                 android:visibility="gone"/>
         <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/activityMain_chkLanguage"
-                android:id="@+id/chkLanguage"
-                android:layout_toRightOf="@id/chkNotSuitableForAudience"
-                android:layout_below="@id/chkNotSuitableForAudience"
+                android:id="@+id/editMovie_chkLanguage"
+                android:layout_toRightOf="@id/editMovie_chkNotSuitableForAudience"
+                android:layout_below="@id/editMovie_chkNotSuitableForAudience"
                 android:visibility="gone"/>
 
     </RelativeLayout>
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <Button
+        <!--<Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/activityMain_btnAddMovie"
                 android:layout_centerInParent="true"
-                android:onClick="btnAddMovie"/>
+                android:onClick="btnAddMovie"/>-->
     </RelativeLayout>
 </LinearLayout>

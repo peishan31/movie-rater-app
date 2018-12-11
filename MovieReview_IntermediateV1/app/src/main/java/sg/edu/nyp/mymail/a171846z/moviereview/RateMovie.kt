@@ -20,6 +20,7 @@ class RateMovie : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rate_movie)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         var title = intent.getStringExtra("name")
         rateMovie_tvTitle.text = title.toString()
@@ -30,6 +31,11 @@ class RateMovie : AppCompatActivity() {
         menuInflater.inflate(R.menu.ratemenu, menu)
 
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
     }
 
     companion object {

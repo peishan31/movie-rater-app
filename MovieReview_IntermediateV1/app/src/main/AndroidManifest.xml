@@ -12,10 +12,10 @@
         <activity android:name=".MainActivity" android:parentActivityName=".LandingPage">
 
         </activity>
-        <activity android:name=".ViewMovieDetails" android:parentActivityName=".LandingPage">
+        <activity android:name=".ViewMovieDetails">
 
         </activity>
-        <activity android:name=".RateMovie" android:parentActivityName=".ViewMovieDetails">
+        <activity android:name=".RateMovie">
         </activity>
         <activity android:name=".LandingPage">
             <intent-filter>

@@ -78,6 +78,7 @@
                 android:text="No Reviews yet.\nLong press here to add your review"/>
         <RatingBar
                 android:id="@+id/viewMovie_rating_bar"
+                android:isIndicator="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"/> <!--Appears when there's review-->
