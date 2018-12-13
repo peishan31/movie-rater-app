@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1">
+    <!--Top: 0.2; center: 0.75 bottom: 0.05-->
+    <!--Top-->
+    <ImageView
+            android:src="@drawable/movie_icon"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="TextView1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/textView1"
+            android:layout_weight="0.9"/>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1">
+
+        <TextView
+                android:gravity="center"
+                android:text="Title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/landing_title"/>
+
+    </LinearLayout>
+    <!--//Top-->
+</LinearLayout>
