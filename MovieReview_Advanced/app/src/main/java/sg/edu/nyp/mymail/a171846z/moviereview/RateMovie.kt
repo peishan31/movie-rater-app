@@ -51,7 +51,7 @@ class RateMovie : AppCompatActivity() {
             var review = rateMovie_etRatingView.text.toString()
             var numRating = rateMovie_rating_bar.rating.toString()
 
-            Toast.makeText(this,"review: ${review} numRating: ${numRating}",Toast.LENGTH_LONG).show()
+            //Toast.makeText(this,"review: ${review} numRating: ${numRating}",Toast.LENGTH_LONG).show()
             output.putExtra(REVIEW, review)
             output.putExtra(NUMRATING,numRating)
 

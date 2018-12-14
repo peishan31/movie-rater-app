@@ -22,14 +22,10 @@ class LandingPage : AppCompatActivity() {
         var listMovies = ArrayList<MovieEntity>()
         var moviePosition: Int = 0
     }
-    //private var listMovies = ArrayList<MovieEntity>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing_page)
-
-        //listMovies.add(MovieEntity("The Ring","One day a man eat a mushroom and he died.","English","23-01-2000","Yes"))
-        //listMovies.add(MovieEntity("The Ring 2","One day a man eat a mushroom and he died.","English","23-01-2000","Yes"))
 
         if (listMovies.isEmpty()){
             landing_lvNotes.visibility = View.GONE
@@ -39,13 +35,13 @@ class LandingPage : AppCompatActivity() {
             var moviesAdapter = MoviesAdapter(this, listMovies)
             landing_lvNotes.adapter = moviesAdapter
             landing_lvNotes.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, position, id ->
-                Toast.makeText(this, "Click on ${listMovies[position].mvTitle} ${listMovies[position].mvOverview} ${position}" , Toast.LENGTH_SHORT).show()
+               // Toast.makeText(this, "Click on ${listMovies[position].mvTitle} ${listMovies[position].mvOverview} ${position}" , Toast.LENGTH_SHORT).show()
                 moviePosition = position
                 var myIntent = Intent(this, ViewMovieDetails::class.java)
                 startActivity(myIntent)
             }
             registerForContextMenu(landing_lvNotes)
-            //===========================================================================================
+
             val listview = findViewById(R.id.landing_lvNotes) as ListView
             listview.setLongClickable(true);
             landing_lvNotes.setOnItemLongClickListener(object : AdapterView.OnItemLongClickListener {
@@ -55,7 +51,7 @@ class LandingPage : AppCompatActivity() {
                     position: Int, arg3: Long
                 ): Boolean {
                     moviePosition = position
-                    Toast.makeText(this@LandingPage, "${listview.getItemAtPosition(position).toString()} ${position}", Toast.LENGTH_LONG).show()
+                    //Toast.makeText(this@LandingPage, "${listview.getItemAtPosition(position).toString()} ${position}", Toast.LENGTH_LONG).show()
                     return false
                 }
             })
@@ -111,7 +107,7 @@ class LandingPage : AppCompatActivity() {
             this.landingTitle = view?.findViewById(R.id.landing_title) as TextView
         }
     }
-//===============================================================================================================================
+
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
         super.onCreateContextMenu(menu, v, menuInfo)
 
@@ -130,7 +126,7 @@ class LandingPage : AppCompatActivity() {
 
         return super.onContextItemSelected(item)
     }
-//===========================================================================================================
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.landingmenu, menu)
         return super.onCreateOptionsMenu(menu)

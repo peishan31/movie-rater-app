@@ -97,8 +97,6 @@ class EditMovie : AppCompatActivity() {
                 editTextEmptyValidator(editMovie_etReleaseDate)
             }
         } else if(item?.itemId == R.id.miCancel){
-            //val activity = MainActivity() as MainActivity
-            //activity.onBackPressed()
             super.onBackPressed()
         }
 

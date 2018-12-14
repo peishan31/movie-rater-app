@@ -91,14 +91,10 @@ class MainActivity : AppCompatActivity() {
                 myIntent.putExtra("releaseDate",main_etReleaseDate.text.toString())
                 myIntent.putExtra("language",radioLanguageBtn.text)
                 myIntent.putExtra("suitability",reason)
-                //============================================================
                 var aClass = MovieEntity(main_etName.text.toString(),main_etDescription.text.toString(),
                     radioLanguageBtn.text.toString(),main_etReleaseDate.text.toString(),reason)
                 LandingPage.listMovies.add(aClass)
                 LandingPage.moviePosition = LandingPage.listMovies.indexOf(aClass)
-                //============================================================
-
-
                 startActivity(myIntent)
             } else{
                 editTextEmptyValidator(main_etName)
