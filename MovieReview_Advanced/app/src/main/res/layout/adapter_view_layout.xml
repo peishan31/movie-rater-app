@@ -7,7 +7,6 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:weightSum="1">
-    <!--Top: 0.2; center: 0.75 bottom: 0.05-->
     <!--Top-->
     <ImageView
             android:src="@drawable/movie_icon"

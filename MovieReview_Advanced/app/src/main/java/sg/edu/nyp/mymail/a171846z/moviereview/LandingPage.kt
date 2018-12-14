@@ -55,7 +55,7 @@ class LandingPage : AppCompatActivity() {
                     arg0: AdapterView<*>, v: View,
                     position: Int, arg3: Long
                 ): Boolean {
-
+                    currentMovie = position
                     Toast.makeText(this@LandingPage, "${listview.getItemAtPosition(position).toString()} ${position}", Toast.LENGTH_LONG).show()
                     return false
                 }
