@@ -55,8 +55,8 @@ class RateMovie : AppCompatActivity() {
             output.putExtra(REVIEW, review)
             output.putExtra(NUMRATING,numRating)
 
-            LandingPage.listMovies[LandingPage.currentMovie].review = review
-            LandingPage.listMovies[LandingPage.currentMovie].star = numRating.toFloat()
+            LandingPage.listMovies[LandingPage.moviePosition].review = review
+            LandingPage.listMovies[LandingPage.moviePosition].star = numRating.toFloat()
             setResult(Activity.RESULT_OK, output)
             finish()
         }

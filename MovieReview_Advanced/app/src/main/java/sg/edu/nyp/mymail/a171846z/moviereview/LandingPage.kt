@@ -20,7 +20,7 @@ class LandingPage : AppCompatActivity() {
 
     companion object {
         var listMovies = ArrayList<MovieEntity>()
-        var currentMovie: Int = 0
+        var moviePosition: Int = 0
     }
     //private var listMovies = ArrayList<MovieEntity>()
 
@@ -32,16 +32,15 @@ class LandingPage : AppCompatActivity() {
         //listMovies.add(MovieEntity("The Ring 2","One day a man eat a mushroom and he died.","English","23-01-2000","Yes"))
 
         if (listMovies.isEmpty()){
-            landing_lvNotes.visibility = View.INVISIBLE
+            landing_lvNotes.visibility = View.GONE
         } else {
             // Listing out all the movies
             landing_lvNotes.visibility = View.VISIBLE
             var moviesAdapter = MoviesAdapter(this, listMovies)
             landing_lvNotes.adapter = moviesAdapter
             landing_lvNotes.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, position, id ->
-                //currentMovie = position
                 Toast.makeText(this, "Click on ${listMovies[position].mvTitle} ${listMovies[position].mvOverview} ${position}" , Toast.LENGTH_SHORT).show()
-                currentMovie = position
+                moviePosition = position
                 var myIntent = Intent(this, ViewMovieDetails::class.java)
                 startActivity(myIntent)
             }
@@ -55,7 +54,7 @@ class LandingPage : AppCompatActivity() {
                     arg0: AdapterView<*>, v: View,
                     position: Int, arg3: Long
                 ): Boolean {
-                    currentMovie = position
+                    moviePosition = position
                     Toast.makeText(this@LandingPage, "${listview.getItemAtPosition(position).toString()} ${position}", Toast.LENGTH_LONG).show()
                     return false
                 }

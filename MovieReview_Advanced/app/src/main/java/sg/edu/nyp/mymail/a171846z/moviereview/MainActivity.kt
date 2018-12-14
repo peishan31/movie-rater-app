@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
                 var aClass = MovieEntity(main_etName.text.toString(),main_etDescription.text.toString(),
                     radioLanguageBtn.text.toString(),main_etReleaseDate.text.toString(),reason)
                 LandingPage.listMovies.add(aClass)
-                LandingPage.currentMovie = LandingPage.listMovies.indexOf(aClass)
+                LandingPage.moviePosition = LandingPage.listMovies.indexOf(aClass)
                 //============================================================
 
 

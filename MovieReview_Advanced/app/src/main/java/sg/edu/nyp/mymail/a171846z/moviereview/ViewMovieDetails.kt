@@ -32,19 +32,19 @@ class ViewMovieDetails : AppCompatActivity() {
         venom.mvReleaseDate = intent.getStringExtra("releaseDate")
         venom.mvSuitableForChild = intent.getStringExtra("suitability")
         //venom.mvReason = intent.getStringExtra("reason")*/
-        viewMovie_tvTitle.text = LandingPage.listMovies[LandingPage.currentMovie].mvTitle
-        viewMovie_tvLanguage.text = LandingPage.listMovies[LandingPage.currentMovie].mvLanguage
-        viewMovie_tvOverview.text = LandingPage.listMovies[LandingPage.currentMovie].mvOverview
-        viewMovie_tvReleaseDate.text = LandingPage.listMovies[LandingPage.currentMovie].mvReleaseDate
-        viewMovie_tvSuitableForChildrenBelow13.text = LandingPage.listMovies[LandingPage.currentMovie].mvSuitableForChild
+        viewMovie_tvTitle.text = LandingPage.listMovies[LandingPage.moviePosition].mvTitle
+        viewMovie_tvLanguage.text = LandingPage.listMovies[LandingPage.moviePosition].mvLanguage
+        viewMovie_tvOverview.text = LandingPage.listMovies[LandingPage.moviePosition].mvOverview
+        viewMovie_tvReleaseDate.text = LandingPage.listMovies[LandingPage.moviePosition].mvReleaseDate
+        viewMovie_tvSuitableForChildrenBelow13.text = LandingPage.listMovies[LandingPage.moviePosition].mvSuitableForChild
 
-        if (LandingPage.listMovies[LandingPage.currentMovie].review == ""&&
-            LandingPage.listMovies[LandingPage.currentMovie].star == 0.toFloat()){
+        if (LandingPage.listMovies[LandingPage.moviePosition].review == ""&&
+            LandingPage.listMovies[LandingPage.moviePosition].star == 0.toFloat()){
             viewMovie_tvNoReviews.text="No Reviews yet.\nLong press here to add your review"
             viewMovie_rating_bar.visibility = View.GONE
         } else{
-            viewMovie_tvReview.text = LandingPage.listMovies[LandingPage.currentMovie].review
-            viewMovie_rating_bar.rating = LandingPage.listMovies[LandingPage.currentMovie].star
+            viewMovie_tvReview.text = LandingPage.listMovies[LandingPage.moviePosition].review
+            viewMovie_rating_bar.rating = LandingPage.listMovies[LandingPage.moviePosition].star
             viewMovie_tvReview.visibility = View.VISIBLE
             viewMovie_rating_bar.visibility = View.VISIBLE
             viewMovie_tvNoReviews.visibility = View.GONE

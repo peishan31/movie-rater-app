@@ -50,7 +50,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/viewMovie_tvTitle"
                 android:textSize="18dp"
-                android:text = ""/>
+                android:text = ""
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"/>
 
         <TextView
                 android:layout_width="wrap_content"
@@ -61,7 +63,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/viewMovie_tvOverview"
                 android:textSize="18dp"
-                android:text=""/>
+                android:text=""
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"/>
 
 
         <TextView
@@ -75,20 +79,24 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/viewMovie_tvNoReviews"
                 android:textSize="18dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
                 android:text="No Reviews yet.\nLong press here to add your review"/>
         <RatingBar
                 android:id="@+id/viewMovie_rating_bar"
                 android:isIndicator="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"/> <!--Appears when there's review-->
+                android:visibility="gone"
+                android:layout_marginTop="6dp"/> <!--Appears when there's review-->
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/viewMovie_tvReview"
                 android:textSize="18dp"
                 android:text=""
-                android:visibility="gone"/> <!--Appears when there's review-->
+                android:visibility="gone"
+                android:layout_marginBottom="6dp"/> <!--Appears when there's review-->
 
         <TextView
                 android:layout_width="wrap_content"
@@ -100,6 +108,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/viewMovie_tvLanguage"
                 android:textSize="18dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
                 android:text=""/>
         <TextView
                 android:layout_width="wrap_content"
@@ -111,6 +121,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/viewMovie_tvReleaseDate"
                 android:textSize="18dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
                 android:text=""/>
 
         <TextView
@@ -122,6 +134,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/viewMovie_tvSuitableForChildrenBelow13"
                 android:textSize="18dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
                 android:text=""/>
     </LinearLayout>
     <!--//Center-->

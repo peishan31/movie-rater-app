@@ -19,10 +19,10 @@ class EditMovie : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        editMovie_etName.setText(LandingPage.listMovies[LandingPage.currentMovie].mvTitle)
-        editMovie_etDescription.setText(LandingPage.listMovies[LandingPage.currentMovie].mvOverview)
+        editMovie_etName.setText(LandingPage.listMovies[LandingPage.moviePosition].mvTitle)
+        editMovie_etDescription.setText(LandingPage.listMovies[LandingPage.moviePosition].mvOverview)
 
-        when (LandingPage.listMovies[LandingPage.currentMovie].mvLanguage){
+        when (LandingPage.listMovies[LandingPage.moviePosition].mvLanguage){
             "English" -> {
                 editMovie_rbEnglish.isChecked = true
             }
@@ -36,9 +36,9 @@ class EditMovie : AppCompatActivity() {
                 editMovie_rbTamil.isChecked = true
             }
         }
-        editMovie_etReleaseDate.setText(LandingPage.listMovies[LandingPage.currentMovie].mvReleaseDate)
+        editMovie_etReleaseDate.setText(LandingPage.listMovies[LandingPage.moviePosition].mvReleaseDate)
         //editMovie_rbEnglish.isChecked = true
-        when (LandingPage.listMovies[LandingPage.currentMovie].mvSuitableForChild){
+        when (LandingPage.listMovies[LandingPage.moviePosition].mvSuitableForChild){
             "No(Violence)" -> {
                 editMovie_chkNotSuitableForAudience.isChecked = true
                 editMovie_chkViolence.isChecked = true
@@ -135,14 +135,14 @@ class EditMovie : AppCompatActivity() {
                 var aClass = MovieEntity(editMovie_etName.text.toString(),editMovie_etDescription.text.toString(),
                     radioLanguageBtn.text.toString(),editMovie_etReleaseDate.text.toString(),reason)
                 // rating value remain the same
-                var review: String = LandingPage.listMovies[LandingPage.currentMovie].review
-                var numRating: Float = LandingPage.listMovies[LandingPage.currentMovie].star
+                var review: String = LandingPage.listMovies[LandingPage.moviePosition].review
+                var numRating: Float = LandingPage.listMovies[LandingPage.moviePosition].star
 
-                LandingPage.listMovies.set(LandingPage.currentMovie,aClass)
-                LandingPage.currentMovie = LandingPage.listMovies.indexOf(aClass)
+                LandingPage.listMovies.set(LandingPage.moviePosition,aClass)
+                LandingPage.moviePosition = LandingPage.listMovies.indexOf(aClass)
 
-                LandingPage.listMovies[LandingPage.currentMovie].review = review
-                LandingPage.listMovies[LandingPage.currentMovie].star = numRating.toFloat()
+                LandingPage.listMovies[LandingPage.moviePosition].review = review
+                LandingPage.listMovies[LandingPage.moviePosition].star = numRating.toFloat()
                 //============================================================
 
                 startActivity(myIntent)
